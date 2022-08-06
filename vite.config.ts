@@ -1,9 +1,13 @@
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  test: {
+    globals: true,
+    environment: "jsdom",
+  },
   build: {
     lib: {
       entry: resolve(__dirname, "lib/index.ts"),
