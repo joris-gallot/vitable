@@ -6,19 +6,18 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/vitable.umd.cjs",
+  "main": "./dist/vitable.umd.js",
   "module": "./dist/vitable.es.js",
   "exports": {
     ".": {
       "import": "./dist/vitable.es.js",
-      "require": "./dist/vitable.umd.cjs"
+      "require": "./dist/vitable.umd.js"
     }
   },
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly",
-    "preview": "vite preview"
+    "dev": "vite build --watch && vue-tsc --emitDeclarationOnly",
+    "build": "vite build && vue-tsc --emitDeclarationOnly"
   },
   "dependencies": {
     "vue": "^3.2.37"
