@@ -15,18 +15,6 @@ class VTableFactory<T = any> {
           required: true,
         },
       },
-      emits: {
-        clickRow: (row: T, index: number) => true,
-      },
-      setup(props, { emit }) {
-        const onClickRow = (row: T, index: number) => {
-          emit("clickRow", row, index);
-        };
-
-        return {
-          onClickRow,
-        };
-      },
     });
   }
 }
@@ -51,7 +39,7 @@ export default main;
     </thead>
 
     <tbody>
-      <tr v-for="(row, i) in data" :key="i" @click="onClickRow(row, i)">
+      <tr v-for="(row, i) in data" :key="i">
         <td v-for="(column, j) in config.columns" :key="j">
           {{ row[column.field] }}
         </td>
